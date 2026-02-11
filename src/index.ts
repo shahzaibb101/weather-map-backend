@@ -9,10 +9,11 @@ import { parse } from "json2csv";
 
 dotenv.config();
 
-import weatherRouter from "./routes/weather/weather";
-import authRouter from "./routes/auth/auth";
-import dataRouter from "./routes/information/blogsAndNews";
-import connectToDatabase from "./db/db";
+import weatherRouter from "./routes/weather/weather.js";
+import authRouter from "./routes/auth/auth.js";
+import dataRouter from "./routes/information/blogsAndNews.js";
+import connectToDatabase from "./db/db.js";
+
 import BlogModel from "./models/blogs";
 const app: express.Application = express();
 const PORT = process.env.PORT || 5000;
@@ -30,3 +31,4 @@ app.use("/data", dataRouter);
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
